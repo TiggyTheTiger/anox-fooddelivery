@@ -1,0 +1,87 @@
+{
+    "job_npc_blip_label": "Food Delivery Job",
+    "start_food_delivery": "Start Food Delivery",
+    "stop_food_delivery": "Stop Food Delivery",
+    "job_started_title": "Food Delivery",
+    "job_started_description": "You have started your food delivery job!",
+    "new_order_title": "New Order Available",
+    "new_order_description": "Check your order details",
+    "order_cancelled_title": "Order Cancelled",
+    "order_cancelled_description": "You cancelled the order. %s reputation",
+    "order_complete_title": "Delivery Complete",
+    "order_complete_description": "Great job! Order delivered successfully",
+    "order_late_title": "Late Delivery",
+    "order_late_description": "Order delivered late. %s reputation",
+    "fast_delivery_title": "Fast Delivery!",
+    "fast_delivery_description": "Amazing speed! %s reputation and tip bonus!",
+    "fast_delivery_earnings": "%s Earned: $%s (includes $%s tip!)",
+    "late_delivery_earnings": "%s Earned: $%s",
+    "normal_delivery_earnings": "%s Earned: $%s",
+    "pickup_order_label": "Picking up order...",
+    "deliver_order_label": "Delivering order...",
+    "stopped_working": "You have stopped working",
+    "next_order_countdown": "Next order in: %s seconds | Current Rep: %s",
+    "new_order_dialog_header": "New Order Available",
+    "new_order_dialog_content": "**Restaurant:** %s  \n**Items:** %s  \n**Delivery Time:** %s minutes  \n\nAccept this order?",
+    "accept_order": "Accept Order",
+    "decline_order": "Decline Order",
+    "pickup_blip": "Pickup: %s",
+    "delivery_blip": "Delivery Location",
+    "time_remaining": "Time Remaining: %02d:%02d | Rep: %s",
+    "deliver_timer": "Deliver in: %02d:%02d | Rep: %s",
+    "pickup_prompt": "[E] - Pickup Order",
+    "deliver_prompt": "[E] - Deliver Order",
+    "order_picked_up_title": "Order Picked Up",
+    "order_picked_up_description": "Deliver to the customer!",
+    "delivery_complete_header": "Delivery Complete!",
+    "delivery_complete_content": "Great job! Your current reputation is: **%s**  \n\nDo you want to continue working?",
+    "continue_working": "Continue Working",
+    "end_shift": "End Shift",
+    "waiting_next_order_title": "Food Delivery",
+    "waiting_next_order_description": "Waiting for next order...",
+    "order_failed_title": "Order Failed",
+    "order_failed_description": "You ran out of time! %s reputation",
+    "no_restaurants_title": "No Restaurants Available",
+    "no_restaurants_description": "All restaurants are currently busy. Please wait a moment and try again.",
+    "no_delivery_points_title": "No Delivery Points Available",
+    "no_delivery_points_description": "All delivery locations are currently occupied. Please wait a moment and try again.",
+    
+    "burgershot_items": {
+        "bleeder_burger": "Bleeder Burger",
+        "cola": "Cola",
+        "fries": "Fries",
+        "water": "Water"
+    },
+    "upnatomburger_items": {
+        "hamburger": "Hamburger",
+        "cheeseburger": "Cheeseburger",
+        "cola": "Cola",
+        "fries": "Fries",
+        "milkshake": "Milkshake"
+    },
+    "beanmachinecoffee_items": {
+        "coffee": "Coffee",
+        "cappuccino": "Cappuccino",
+        "latte": "Latte",
+        "donut": "Donut",
+        "muffin": "Muffin",
+        "bagel": "Bagel"
+    },
+    "tacos_items": {
+        "taco": "Taco",
+        "burrito": "Burrito",
+        "quesadilla": "Quesadilla",
+        "nachos": "Nachos",
+        "salsa": "Salsa",
+        "guacamole": "Guacamole"
+    },
+    "hornysburgers_items": {
+        "hornys_burger": "Horny's Special Burger",
+        "spicy_burger": "Spicy Burger",
+        "curly_fries": "Curly Fries",
+        "spicy_sauce": "Spicy Sauce",
+        "ice_cream": "Ice Cream"
+    }
+}
+
+
