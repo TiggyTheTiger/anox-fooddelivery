@@ -9,6 +9,8 @@ local reputation = 0
 local orderStartTime = nil
 local pickupBlip = nil
 local deliveryBlip = nil
+local showDeliveryMarker = false
+local showPickupMarker = false
 local isNearPickup = false
 local isNearDelivery = false
 local currentTimerText = ""
@@ -201,6 +203,7 @@ function AcceptOrder()
     Framework.Debug("Order accepted", 'info')
     orderStartTime = GetGameTimer()
     pickupBlip = AddBlipForCoord(currentOrder.restaurant.coords)
+    showPickupMarker = true
     SetBlipSprite(pickupBlip, currentOrder.restaurant.blip.sprite)
     SetBlipColour(pickupBlip, currentOrder.restaurant.blip.color)
     SetBlipScale(pickupBlip, currentOrder.restaurant.blip.scale)
@@ -298,11 +301,13 @@ function PickupOrder()
         lib.callback('anox-fooddelivery:validatePickup', 5000, function(success)
             if success then
                 currentOrder.pickedUp = true
+                showPickupMarker = false
                 if pickupBlip then
                     RemoveBlip(pickupBlip)
                     pickupBlip = nil
                 end
                 deliveryBlip = AddBlipForCoord(currentOrder.deliveryPoint)
+                showDeliveryMarker = true
                 SetBlipSprite(deliveryBlip, 1)
                 SetBlipColour(deliveryBlip, 5)
                 SetBlipScale(deliveryBlip, 0.8)
@@ -320,6 +325,31 @@ function PickupOrder()
         end, currentOrder.id)
     end
 end
+
+
+-- Pickup & Delivery marker thread
+CreateThread(function()
+    while true do
+        Wait(0)
+
+        if showPickupMarker and currentOrder then
+            DrawMarker(2, currentOrder.restaurant.coords.x, currentOrder.restaurant.coords.y, currentOrder.restaurant.coords.z + 0.5, 
+                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.5, 0.5, 0.5,
+                0, 100, 255, 150,
+                false, true, 2, nil, nil, false)
+        end
+
+        if showDeliveryMarker and currentOrder then
+            DrawMarker(2, currentOrder.deliveryPoint.x, currentOrder.deliveryPoint.y, currentOrder.deliveryPoint.z + 0.5, 
+                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.5, 0.5, 0.5,
+                0, 255, 0, 150,
+                false, true, 2, nil, nil, false)
+        end
+    end
+end)
+
 
 function ShowDeliveryTimerToDestination()
     local endTime = orderStartTime + (Config.DeliveryTime * 1000)
